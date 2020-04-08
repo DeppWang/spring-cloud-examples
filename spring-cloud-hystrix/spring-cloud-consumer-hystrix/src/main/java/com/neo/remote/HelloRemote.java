@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Created by summer on 2017/5/11.
+ * 只在调用方加 FeignClient，提供方无需任何操作
  */
-@FeignClient(name= "spring-cloud-producer", fallback = HelloRemoteHystrix.class)
+@FeignClient(name = "spring-cloud-producer", fallback = HelloRemoteHystrix.class)
 public interface HelloRemote {
 
     @RequestMapping(value = "/hello")
