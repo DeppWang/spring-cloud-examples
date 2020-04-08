@@ -13,8 +13,13 @@ public class ConsumerController {
     HelloRemote HelloRemote;
 	
     @RequestMapping("/hello/{name}")
-    public String index(@PathVariable("name") String name) {
+    public String hello(@PathVariable("name") String name) {
         return HelloRemote.hello(name);
+    }
+
+    @RequestMapping("/")
+    public String index() {
+        return "index";
     }
 
 }
